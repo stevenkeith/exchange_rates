@@ -1,0 +1,31 @@
+<h1>FX-u-like</h1>
+<%= link_to "Exchange Rates", exchange_rates_path %>
+
+
+<form method="post" action=".">
+    <p>
+        <label>Date:</label> <input type="date" name="when">
+    </p>
+    <p>
+        <label>Amount:</label> <input type="number" name="amount" min="1">    
+    </p>
+    <p>
+        <label>From:</label>
+        <select name="source_currency">
+            <% @source_currencies.each do |currency| %>
+            <option value="<%= currency %>"><%= currency %></option>
+            <% end %>
+        </select>    
+    </p>
+    <p>
+        <label>To:</label>
+        <select name="destination_currency">
+            <% @destination_currencies.each do |currency| %>
+            <option value="<%= currency %>"><%= currency %></option>
+            <% end %>
+        </select>    
+    </p>
+    <input type="submit" />
+</form>
+
+<%= @result %>

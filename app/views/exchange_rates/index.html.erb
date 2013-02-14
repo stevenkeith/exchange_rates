@@ -1,0 +1,29 @@
+<h1>Listing exchange_rates</h1>
+
+<table>
+  <tr>
+    <th>When</th>
+    <th>Source currency</th>
+    <th>Destination currency</th>
+    <th>Rate</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @exchange_rates.each do |exchange_rate| %>
+  <tr>
+    <td><%= exchange_rate.when %></td>
+    <td><%= exchange_rate.source_currency %></td>
+    <td><%= exchange_rate.destination_currency %></td>
+    <td><%= exchange_rate.rate %></td>
+    <td><%= link_to 'Show', exchange_rate %></td>
+    <td><%= link_to 'Edit', edit_exchange_rate_path(exchange_rate) %></td>
+    <td><%= link_to 'Destroy', exchange_rate, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Exchange rate', new_exchange_rate_path %>

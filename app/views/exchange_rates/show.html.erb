@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>When:</b>
+  <%= @exchange_rate.when %>
+</p>
+
+<p>
+  <b>Source currency:</b>
+  <%= @exchange_rate.source_currency %>
+</p>
+
+<p>
+  <b>Destination currency:</b>
+  <%= @exchange_rate.destination_currency %>
+</p>
+
+<p>
+  <b>Rate:</b>
+  <%= @exchange_rate.rate %>
+</p>
+
+
+<%= link_to 'Edit', edit_exchange_rate_path(@exchange_rate) %> |
+<%= link_to 'Back', exchange_rates_path %>
